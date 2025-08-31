@@ -8,7 +8,7 @@ import {
   LogOut,
   PiggyBank
 } from 'lucide-react';
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../context/AuthContext';
 
 const Navigation: React.FC = () => {
   const { logout, user } = useAuth();
