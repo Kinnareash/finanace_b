@@ -1,62 +1,87 @@
 import React from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, ResponsiveContainer, Tooltip } from 'recharts';
 
 interface SpendingData {
-  month: string;
-  income: number;
-  expenses: number;
+  day: string;
+  amount: number;
 }
 
 const data: SpendingData[] = [
-  { month: 'Aug', income: 3500, expenses: 2800 },
-  { month: 'Sep', income: 3500, expenses: 3100 },
-  { month: 'Oct', income: 3500, expenses: 2900 },
-  { month: 'Nov', income: 3500, expenses: 3200 },
-  { month: 'Dec', income: 3500, expenses: 2600 },
+  { day: 'MON', amount: 2000 },
+  { day: 'TUE', amount: 3200 },
+  { day: 'WED', amount: 2800 },
+  { day: 'THU', amount: 4200 },
+  { day: 'FRI', amount: 3800 },
+  { day: 'SAT', amount: 3500 },
+  { day: 'SUN', amount: 2900 },
 ];
 
 const SpendingChart: React.FC = () => {
   return (
-    <div className="bg-white p-6 rounded-xl shadow-sm">
-      <h3 className="text-lg font-semibold text-gray-900 mb-4">
-        Income vs Expenses
-      </h3>
-      <div className="h-64">
+    <div className="bg-gray-900 p-6 rounded-xl text-white">
+      <div className="flex items-center justify-between mb-6">
+        <h3 className="text-lg font-semibold">Statistic</h3>
+        <div className="flex items-center space-x-1">
+          <span className="text-2xl">•••</span>
+        </div>
+      </div>
+      
+      <div className="mb-6">
+        <div className="text-3xl font-bold mb-1">$10,450</div>
+        <div className="text-sm text-gray-400 flex items-center">
+          <span className="text-green-400 mr-1">↗</span>
+          Increase of 5% from last month
+        </div>
+      </div>
+
+      <div className="flex space-x-2 mb-6">
+        <button className="px-3 py-1 text-xs rounded-full bg-gray-700 text-gray-300">Day</button>
+        <button className="px-3 py-1 text-xs rounded-full bg-lime-400 text-black font-medium">Week</button>
+        <button className="px-3 py-1 text-xs rounded-full bg-gray-700 text-gray-300">Month</button>
+        <button className="px-3 py-1 text-xs rounded-full bg-gray-700 text-gray-300">Year</button>
+      </div>
+
+      <div className="h-48 mb-6">
         <ResponsiveContainer width="100%" height="100%">
-          <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
+          <LineChart data={data}>
             <XAxis 
-              dataKey="month" 
-              stroke="#6b7280"
-              fontSize={12}
+              dataKey="day" 
+              axisLine={false}
+              tickLine={false}
+              tick={{ fontSize: 12, fill: '#9ca3af' }}
             />
-            <YAxis 
-              stroke="#6b7280"
-              fontSize={12}
-              tickFormatter={(value) => `$${value}`}
-            />
+            <YAxis hide />
             <Tooltip 
-              formatter={(value: number) => [`$${value}`, '']}
+              formatter={(value: number) => [`$${value.toLocaleString()}`, '']}
               labelStyle={{ color: '#374151' }}
               contentStyle={{ 
-                backgroundColor: 'white', 
-                border: '1px solid #e5e7eb',
-                borderRadius: '8px'
+                backgroundColor: '#1f2937', 
+                border: 'none',
+                borderRadius: '8px',
+                color: 'white'
               }}
             />
-            <Bar dataKey="income" fill="#10b981" radius={[4, 4, 0, 0]} />
-            <Bar dataKey="expenses" fill="#ef4444" radius={[4, 4, 0, 0]} />
-          </BarChart>
+            <Line 
+              type="monotone" 
+              dataKey="amount" 
+              stroke="#a3e635" 
+              strokeWidth={3}
+              dot={{ fill: '#a3e635', strokeWidth: 2, r: 4 }}
+              activeDot={{ r: 6, stroke: '#a3e635', strokeWidth: 2 }}
+            />
+          </LineChart>
         </ResponsiveContainer>
       </div>
-      <div className="flex justify-center mt-4 space-x-6">
-        <div className="flex items-center">
-          <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
-          <span className="text-sm text-gray-600">Income</span>
-        </div>
-        <div className="flex items-center">
-          <div className="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
-          <span className="text-sm text-gray-600">Expenses</span>
+
+      <div className="bg-lime-400 text-black p-4 rounded-xl">
+        <div className="flex items-center justify-between">
+          <div>
+            <h4 className="font-semibold mb-1">Tips for increasing income</h4>
+            <p className="text-sm opacity-80">Discover new ways to boost your earnings</p>
+          </div>
+          <button className="px-4 py-2 bg-black text-lime-400 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors duration-150">
+            Learn
+          </button>
         </div>
       </div>
     </div>

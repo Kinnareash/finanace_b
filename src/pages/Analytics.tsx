@@ -87,8 +87,8 @@ const Analytics: React.FC = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Analytics</h1>
-        <p className="mt-1 text-sm text-gray-600">
+        <h1 className="text-3xl font-bold text-white">Analytics</h1>
+        <p className="mt-1 text-sm text-gray-200">
           AI-powered insights and spending analysis
         </p>
       </div>
@@ -98,10 +98,10 @@ const Analytics: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border border-blue-200">
             <div className="flex items-center mb-4">
-              <Brain className="h-6 w-6 text-blue-600 mr-2" />
-              <h3 className="text-lg font-semibold text-blue-900">AI Trends</h3>
+              <Brain className="h-6 w-6 text-lime-600 mr-2" />
+              <h3 className="text-lg font-semibold text-lime-900">AI Trends</h3>
             </div>
-            <p className="text-sm text-blue-800 leading-relaxed">
+            <p className="text-sm text-lime-800 leading-relaxed">
               {analysis.trends}
             </p>
           </div>
@@ -118,10 +118,10 @@ const Analytics: React.FC = () => {
 
           <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6 border border-green-200">
             <div className="flex items-center mb-4">
-              <Lightbulb className="h-6 w-6 text-green-600 mr-2" />
-              <h3 className="text-lg font-semibold text-green-900">Suggestions</h3>
+              <Lightbulb className="h-6 w-6 text-lime-600 mr-2" />
+              <h3 className="text-lg font-semibold text-lime-900">Suggestions</h3>
             </div>
-            <p className="text-sm text-green-800 leading-relaxed">
+            <p className="text-sm text-lime-800 leading-relaxed">
               {analysis.suggestions}
             </p>
           </div>
@@ -133,7 +133,7 @@ const Analytics: React.FC = () => {
         {/* Savings Trend */}
         <div className="bg-white rounded-xl shadow-sm p-6">
           <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-            <TrendingUp className="h-5 w-5 mr-2 text-blue-600" />
+            <TrendingUp className="h-5 w-5 mr-2 text-lime-600" />
             Savings Trend
           </h3>
           <div className="h-64">
@@ -154,10 +154,10 @@ const Analytics: React.FC = () => {
                 <Line 
                   type="monotone" 
                   dataKey="savings" 
-                  stroke="#3b82f6" 
+                  stroke="#84cc16" 
                   strokeWidth={3}
-                  dot={{ fill: '#3b82f6', strokeWidth: 2, r: 4 }}
-                  activeDot={{ r: 6, stroke: '#3b82f6', strokeWidth: 2 }}
+                  dot={{ fill: '#84cc16', strokeWidth: 2, r: 4 }}
+                  activeDot={{ r: 6, stroke: '#84cc16', strokeWidth: 2 }}
                 />
               </LineChart>
             </ResponsiveContainer>
@@ -211,14 +211,14 @@ const Analytics: React.FC = () => {
                   borderRadius: '8px'
                 }}
               />
-              <Bar dataKey="income" fill="#10b981" radius={[4, 4, 0, 0]} name="Income" />
+              <Bar dataKey="income" fill="#84cc16" radius={[4, 4, 0, 0]} name="Income" />
               <Bar dataKey="expenses" fill="#ef4444" radius={[4, 4, 0, 0]} name="Expenses" />
             </BarChart>
           </ResponsiveContainer>
         </div>
         <div className="flex justify-center mt-4 space-x-6">
           <div className="flex items-center">
-            <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
+            <div className="w-3 h-3 bg-lime-500 rounded-full mr-2"></div>
             <span className="text-sm text-gray-600">Income</span>
           </div>
           <div className="flex items-center">

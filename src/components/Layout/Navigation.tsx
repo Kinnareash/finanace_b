@@ -26,7 +26,9 @@ const Navigation: React.FC = () => {
       <div className="hidden md:flex md:w-64 md:flex-col">
         <div className="flex flex-col flex-grow pt-5 overflow-y-auto bg-white border-r border-gray-200">
           <div className="flex items-center flex-shrink-0 px-4">
-            <PiggyBank className="h-8 w-8 text-blue-600" />
+            <div className="w-8 h-8 bg-lime-400 rounded-lg flex items-center justify-center">
+              <span className="text-black font-bold text-lg">*</span>
+            </div>
             <span className="ml-2 text-xl font-bold text-gray-900">FinanceTracker</span>
           </div>
           
@@ -39,7 +41,7 @@ const Navigation: React.FC = () => {
                   className={({ isActive }) =>
                     `group flex items-center px-2 py-2 text-sm font-medium rounded-md transition-colors duration-150 ${
                       isActive
-                        ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-700'
+                        ? 'bg-lime-50 text-lime-700 border-r-2 border-lime-700'
                         : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                     }`
                   }
@@ -83,7 +85,7 @@ const Navigation: React.FC = () => {
               className={({ isActive }) =>
                 `flex flex-col items-center py-2 px-3 text-xs font-medium transition-colors duration-150 ${
                   isActive
-                    ? 'text-blue-700'
+                    ? 'text-lime-700'
                     : 'text-gray-600 hover:text-gray-900'
                 }`
               }

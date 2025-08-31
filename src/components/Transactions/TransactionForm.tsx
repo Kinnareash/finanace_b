@@ -116,7 +116,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({
                   />
                   <div className={`px-4 py-2 rounded-lg border-2 cursor-pointer transition-all duration-150 ${
                     watchedType === 'income' 
-                      ? 'border-green-500 bg-green-50 text-green-700' 
+                      ? 'border-lime-500 bg-lime-50 text-lime-700' 
                       : 'border-gray-300 hover:border-gray-400'
                   }`}>
                     Income
@@ -205,7 +205,7 @@ const TransactionForm: React.FC<TransactionFormProps> = ({
               <button
                 type="submit"
                 disabled={isLoading}
-                className="flex-1 py-2 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-150"
+                className="flex-1 py-2 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-black bg-lime-400 hover:bg-lime-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lime-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-150"
               >
                 {isLoading ? 'Saving...' : (transaction ? 'Update' : 'Add')}
               </button>

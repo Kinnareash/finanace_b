@@ -10,9 +10,48 @@ interface StatsCardProps {
     isPositive: boolean;
   };
   color: string;
+  variant?: 'default' | 'balance';
 }
 
-const StatsCard: React.FC<StatsCardProps> = ({ title, value, icon: Icon, trend, color }) => {
+const StatsCard: React.FC<StatsCardProps> = ({ title, value, icon: Icon, trend, color, variant = 'default' }) => {
+  if (variant === 'balance') {
+    return (
+      <div className="bg-gradient-to-br from-lime-400 to-lime-500 rounded-2xl p-6 text-black relative overflow-hidden">
+        <div className="absolute top-4 right-4 text-xs font-medium opacity-70">
+          •••• 4206
+        </div>
+        <div className="absolute top-4 right-4 mt-6">
+          <span className="text-lg font-bold">VISA</span>
+        </div>
+        
+        <div className="mt-8">
+          <p className="text-sm opacity-80 mb-1">Total Balance</p>
+          <p className="text-3xl font-bold">{value}</p>
+        </div>
+        
+        <div className="flex justify-between mt-8">
+          <div className="flex items-center space-x-4">
+            <div className="w-10 h-10 bg-black bg-opacity-20 rounded-full flex items-center justify-center">
+              <span className="text-lg">⬆</span>
+            </div>
+            <div className="w-10 h-10 bg-black bg-opacity-20 rounded-full flex items-center justify-center">
+              <span className="text-lg">➤</span>
+            </div>
+            <div className="w-10 h-10 bg-black bg-opacity-20 rounded-full flex items-center justify-center">
+              <span className="text-lg">⬇</span>
+            </div>
+          </div>
+        </div>
+        
+        <div className="flex justify-between text-xs mt-2 opacity-80">
+          <span>Top up</span>
+          <span>Send</span>
+          <span>Request</span>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white overflow-hidden shadow-sm rounded-xl hover:shadow-md transition-shadow duration-200">
       <div className="p-6">

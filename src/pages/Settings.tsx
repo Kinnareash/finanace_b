@@ -32,8 +32,8 @@ const Settings: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900">Settings</h1>
-        <p className="mt-1 text-sm text-gray-600">
+        <h1 className="text-3xl font-bold text-white">Settings</h1>
+        <p className="mt-1 text-sm text-gray-200">
           Manage your account and application preferences
         </p>
       </div>
@@ -73,7 +73,7 @@ const Settings: React.FC = () => {
               </div>
             </div>
             <div className="mt-6">
-              <button className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-150">
+              <button className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-black bg-lime-400 hover:bg-lime-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lime-500 transition-colors duration-150">
                 Update Profile
               </button>
             </div>
@@ -97,8 +97,8 @@ const Settings: React.FC = () => {
                 </div>
                 <button
                   onClick={() => setNotifications(prev => ({ ...prev, email: !prev.email }))}
-                  className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
-                    notifications.email ? 'bg-blue-600' : 'bg-gray-200'
+                  className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2 ${
+                    notifications.email ? 'bg-lime-500' : 'bg-gray-200'
                   }`}
                 >
                   <span
@@ -116,8 +116,8 @@ const Settings: React.FC = () => {
                 </div>
                 <button
                   onClick={() => setNotifications(prev => ({ ...prev, spending: !prev.spending }))}
-                  className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
-                    notifications.spending ? 'bg-blue-600' : 'bg-gray-200'
+                  className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2 ${
+                    notifications.spending ? 'bg-lime-500' : 'bg-gray-200'
                   }`}
                 >
                   <span
@@ -135,8 +135,8 @@ const Settings: React.FC = () => {
                 </div>
                 <button
                   onClick={() => setNotifications(prev => ({ ...prev, weekly: !prev.weekly }))}
-                  className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
-                    notifications.weekly ? 'bg-blue-600' : 'bg-gray-200'
+                  className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2 ${
+                    notifications.weekly ? 'bg-lime-500' : 'bg-gray-200'
                   }`}
                 >
                   <span
@@ -154,7 +154,7 @@ const Settings: React.FC = () => {
         <div className="bg-white rounded-xl shadow-sm">
           <div className="px-6 py-4 border-b border-gray-200">
             <h3 className="text-lg font-semibold text-gray-900 flex items-center">
-              {isDarkMode ? <Moon className="h-5 w-5 mr-2 text-blue-600" /> : <Sun className="h-5 w-5 mr-2 text-blue-600" />}
+              {isDarkMode ? <Moon className="h-5 w-5 mr-2 text-lime-600" /> : <Sun className="h-5 w-5 mr-2 text-lime-600" />}
               Appearance
             </h3>
           </div>
@@ -166,8 +166,8 @@ const Settings: React.FC = () => {
               </div>
               <button
                 onClick={() => setIsDarkMode(!isDarkMode)}
-                className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
-                  isDarkMode ? 'bg-blue-600' : 'bg-gray-200'
+                className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2 ${
+                  isDarkMode ? 'bg-lime-500' : 'bg-gray-200'
                 }`}
               >
                 <span
@@ -184,7 +184,7 @@ const Settings: React.FC = () => {
         <div className="bg-white rounded-xl shadow-sm">
           <div className="px-6 py-4 border-b border-gray-200">
             <h3 className="text-lg font-semibold text-gray-900 flex items-center">
-              <Shield className="h-5 w-5 mr-2 text-blue-600" />
+              <Shield className="h-5 w-5 mr-2 text-lime-600" />
               Data & Privacy
             </h3>
           </div>
